@@ -233,6 +233,7 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 docker-compose -f docker-compose-mongodb.yaml exec kafka /kafka/bin/kafka-console-consumer.sh \
     --bootstrap-server kafka:9092 \
     --from-beginning \
+    --property schema.registry.url=http://schema-registry:8081 \
     --property print.key=true \
     --topic dbserver1.inventory.customers
 
